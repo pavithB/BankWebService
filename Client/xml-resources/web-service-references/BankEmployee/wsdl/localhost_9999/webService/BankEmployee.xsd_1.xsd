@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is Metro/2.3.2-b608 (trunk-7979; 2015-01-21T12:50:19+0000) JAXWS-RI/2.2.11-b150120.1832 JAXWS-API/2.2.12 JAXB-RI/2.2.12-b141219.1637 JAXB-API/2.2.13-b141020.1521 svn-revision#unknown. --><xs:schema xmlns:tns="http://BankEmployee/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://BankEmployee/">
+
+<xs:element name="addEmployee" type="tns:addEmployee"/>
+
+<xs:element name="deleteEmployee" type="tns:deleteEmployee"/>
+
+<xs:element name="getAccounts" type="tns:getAccounts"/>
+
+<xs:element name="getAccountsResponse" type="tns:getAccountsResponse"/>
+
+<xs:element name="login" type="tns:login"/>
+
+<xs:element name="loginResponse" type="tns:loginResponse"/>
+
+<xs:complexType name="addEmployee">
+<xs:sequence>
+<xs:element name="sql" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="login">
+<xs:sequence>
+<xs:element name="uName" type="xs:string" minOccurs="0"/>
+<xs:element name="pWord" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="loginResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="deleteEmployee">
+<xs:sequence>
+<xs:element name="sql" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getAccounts">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getAccountsResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:employee" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="employee">
+<xs:sequence>
+<xs:element name="emp_Name" type="xs:string" minOccurs="0"/>
+<xs:element name="emp_PassWord" type="xs:string" minOccurs="0"/>
+<xs:element name="emp_Position" type="xs:string" minOccurs="0"/>
+<xs:element name="emp_UserName" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>
